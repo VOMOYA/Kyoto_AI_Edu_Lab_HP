@@ -20,19 +20,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+            // フォームはaction属性で処理されるので、preventDefault()は削除
+            // e.preventDefault();
             
             // Get form values
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const message = document.getElementById('message').value;
             
-            // Here you would typically send the form data to a server
-            // For now, we'll just show an alert
-            alert(`Thank you, ${name}! Your message has been received. We'll get back to you soon.`);
+            // メールクライアントが開かれる前に確認メッセージを表示
+            alert(`${name}様、フォームを送信します。メールクライアントが開きます。`);
             
-            // Reset the form
-            contactForm.reset();
+            // フォームの送信はHTMLのaction属性で処理
+            // フォーム送信後にリセットする処理はそのまま残す
+            // contactForm.reset(); // メールクライアントが開くため、ここでのリセットは不要
         });
     }
     
