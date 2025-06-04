@@ -320,3 +320,36 @@ footer {
         font-size: 1.8rem;
     }
 }
+/* Secondary Button Style */
+.btn.secondary {
+    background-color: #f0f0f0;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.btn.secondary:hover {
+    background-color: var(--primary);
+    color: var(--light-text);
+    transform: translateY(-2px);
+}
+
+/* Contact Buttons Layout */
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 480px) {
+    .contact-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
