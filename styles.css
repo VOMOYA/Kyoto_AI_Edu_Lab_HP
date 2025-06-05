@@ -43,6 +43,8 @@ header {
     position: fixed;
     width: 100%;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -105,7 +107,7 @@ nav ul li a:hover {
     color: var(--light-text);
     padding: 10rem 0 6rem;
     text-align: center;
-    min-height: 80vh;
+    min-height: 60vh;
     display: flex;
     align-items: center;
     margin-top: 0;
@@ -440,7 +442,8 @@ footer {
     }
     
     .hero-center {
-        padding: 9rem 0 4rem;
+        padding: 11rem 0 3rem;
+        min-height: 40vh;
     }
     
     .hero-center h1 {
