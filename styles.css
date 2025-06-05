@@ -44,6 +44,7 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 header .container {
@@ -102,11 +103,12 @@ nav ul li a:hover {
 .hero-center {
     background: linear-gradient(135deg, var(--dark-primary) 0%, var(--light-primary) 100%);
     color: var(--light-text);
-    padding: 8rem 0 6rem;
+    padding: 10rem 0 6rem;
     text-align: center;
     min-height: 80vh;
     display: flex;
     align-items: center;
+    margin-top: 0;
 }
 
 .hero-center h1 {
@@ -438,11 +440,15 @@ footer {
     }
     
     .hero-center {
-        padding: 7rem 0 4rem;
+        padding: 9rem 0 4rem;
     }
     
     .hero-center h1 {
         font-size: 1.8rem;
+    }
+    
+    header {
+        padding: 0.7rem 0;
     }
 }
 
