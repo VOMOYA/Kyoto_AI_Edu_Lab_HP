@@ -272,6 +272,114 @@ textarea {
     color: var(--accent);
 }
 
+/* Activities Section */
+.activities {
+    padding: 5rem 0;
+    background-color: var(--bg-light);
+}
+
+.section-description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    color: var(--text-color);
+}
+
+.activity-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.activity-item {
+    background-color: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.activity-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.activity-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.activity-item:hover .activity-image img {
+    transform: scale(1.05);
+}
+
+.activity-content {
+    padding: 2rem;
+}
+
+.activity-content h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.activity-date {
+    color: #777;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background-color: #f5f5f5;
+    border-left: 4px solid var(--accent);
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+.testimonial p {
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.testimonial-author {
+    display: block;
+    text-align: right;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.cta-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Media queries for Activities section */
+@media (min-width: 768px) {
+    .activity-item {
+        flex-direction: row;
+    }
+    
+    .activity-image {
+        width: 40%;
+        height: auto;
+    }
+    
+    .activity-content {
+        width: 60%;
+    }
+}
+
+@media (max-width: 767px) {
+    .activity-image {
+        height: 200px;
+    }
+}
+
 /* Footer */
 footer {
     background-color: var(--primary);
@@ -320,6 +428,7 @@ footer {
         font-size: 1.8rem;
     }
 }
+
 /* Secondary Button Style */
 .btn.secondary {
     background-color: #f0f0f0;
