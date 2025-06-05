@@ -303,11 +303,16 @@ textarea {
 
 .activity-image {
     width: 100%;
-    height: 250px;
+    height: auto;
     overflow: hidden;
+    position: relative;
+    padding-top: 56.25%; /* 16:9のアスペクト比 */
 }
 
 .activity-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -362,11 +367,12 @@ textarea {
 @media (min-width: 768px) {
     .activity-item {
         flex-direction: row;
+        align-items: stretch;
     }
     
     .activity-image {
         width: 40%;
-        height: auto;
+        padding-top: 30%; /* 横向きの場合は縦横比を調整 */
     }
     
     .activity-content {
@@ -376,7 +382,16 @@ textarea {
 
 @media (max-width: 767px) {
     .activity-image {
-        height: 200px;
+        padding-top: 66.67%; /* モバイル表示では3:2のアスペクト比 */
+    }
+    
+    .activity-content {
+        padding: 1.5rem;
+    }
+    
+    .testimonial {
+        padding: 1rem;
+        margin-top: 1rem;
     }
 }
 
