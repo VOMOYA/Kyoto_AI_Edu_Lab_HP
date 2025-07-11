@@ -104,6 +104,13 @@ nav ul li a:hover {
 }
 
 /* Hero Section */
+.hero-logo {
+    max-width: 180px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 1.5rem auto;
+}
 .hero-center {
     background: linear-gradient(135deg, var(--dark-primary) 0%, var(--light-primary) 100%);
     color: var(--light-text);
