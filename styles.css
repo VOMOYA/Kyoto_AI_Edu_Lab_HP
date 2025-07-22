@@ -275,10 +275,15 @@ textarea {
     gap: 1.5rem;
 }
 
-.socials a {
-    font-size: 2rem;
+.socials svg, .socials i {
+    width: 2em;
+    height: 2em;
+    margin: 0 0.5em;
+    vertical-align: middle;
+    fill: var(--primary);
     color: var(--primary);
-    transition: color 0.3s;
+    transition: fill 0.2s, color 0.2s;
+    font-size: 2em;
 }
 
 .socials a:hover {
