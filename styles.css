@@ -508,3 +508,30 @@ footer {
         text-align: center;
     }
 }
+
+
+/* Animation */
+.card, .column {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.card.visible, .column.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.peatix-widget-container {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background-color: #f5f5f5;
+    border-left: 4px solid var(--accent);
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    text-align: center; /* ウィジェットを中央に配置 */
+}
+
+.peatix-widget-container iframe {
+    max-width: 100%; /* コンテナの幅に合わせて調整 */
+    border: 1px solid #ddd; /* 境界線を追加 */
+}
