@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vomoya.github.io/Kyoto_AI_Edu_Lab_HP/sitemap.xml
