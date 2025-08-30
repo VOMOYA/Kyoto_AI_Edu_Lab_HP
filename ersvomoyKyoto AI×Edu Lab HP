@@ -1,0 +1,30 @@
+[33mcommit ea66088b111e32603a547b5962ebd727aebf0e09[m
+Author: VOMOYA <vomoya04198628@gmail.com>
+Date:   Thu Jun 5 11:20:40 2025 +0900
+
+    活動実績セクションを追加
+
+[1mdiff --git a/index.html b/index.html[m
+[1mindex 33a82fd..34f118c 100644[m
+[1m--- a/index.html[m
+[1m+++ b/index.html[m
+[36m@@ -17,6 +17,7 @@[m
+                 <ul>[m
+                     <li><a href="#about">About</a></li>[m
+                     <li><a href="#services">Services</a></li>[m
+[32m+[m[32m                    <li><a href="#activities">Activities</a></li>[m
+                     <li><a href="#contact">Contact</a></li>[m
+                 </ul>[m
+             </nav>[m
+[36m@@ -93,6 +94,11 @@[m
+         </div>[m
+     </section>[m
+ [m
+[32m+[m[32m    <!-- Activities Section -->[m
+[32m+[m[32m    <section id="activities">[m
+[32m+[m[32m        <!-- Add your activities content here -->[m
+[32m+[m[32m    </section>[m
+[32m+[m
+     <!-- Contact Section -->[m
+     <section id="contact" class="contact-form">[m
+         <div class="container">[m

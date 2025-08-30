@@ -60,6 +60,13 @@ header .container {
     font-size: 1.5rem;
     font-weight: 700;
     line-height: 1.2;
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo {
+    height: 40px;
+    margin-right: 10px;
 }
 
 nav ul {
@@ -534,4 +541,6 @@ footer {
 .peatix-widget-container iframe {
     max-width: 100%; /* コンテナの幅に合わせて調整 */
     border: 1px solid #ddd; /* 境界線を追加 */
+    aspect-ratio: 16 / 9;
+    height: auto;
 }
