@@ -98,7 +98,7 @@ nav.bar{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,
 .hero-home .eyebrow{display:flex;align-items:center;gap:.9rem;margin-bottom:2.4rem}
 .hero-home .eyebrow .ln{width:46px;height:1px;background:var(--amber)}
 .hero-logo{height:50px;width:auto;margin-bottom:2.2rem}
-.hero-home h1{font-family:var(--gothic);font-weight:500;font-size:clamp(2.3rem,6vw,4.8rem);line-height:1.28;letter-spacing:.01em;color:var(--ink);margin-bottom:2.1rem;max-width:24ch;word-break:keep-all;overflow-wrap:break-word}
+.hero-home h1{font-family:var(--gothic);font-weight:700;font-size:clamp(2.3rem,6vw,4.8rem);line-height:1.28;letter-spacing:.01em;color:var(--ink);margin-bottom:2.1rem;max-width:24ch;word-break:keep-all;overflow-wrap:break-word}
 .hero-home h1 .em{color:var(--amber)}
 /* かえる(KAEL) の掛詞ルビ */
 .kael{font-family:var(--serif-en);font-weight:700;font-size:.5em;letter-spacing:.04em;color:var(--amber);vertical-align:.18em;margin:0 .04em 0 .02em}
@@ -152,6 +152,17 @@ nav.bar{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,
 .fact .n small{font-size:.38em;color:var(--amber);margin-left:.12em;font-weight:700}
 .fact .l{font-size:.8rem;letter-spacing:.05em;color:var(--gray);margin-top:.8rem}
 @media(max-width:680px){.facts-in{grid-template-columns:1fr 1fr}.fact:nth-child(odd){border-left:none}.fact:nth-child(n+3){border-top:1px solid var(--line)}.fact{padding:2rem 1rem}}
+
+/* ===== trust wall (連携先) — 数でなく実名で信頼を見せる ===== */
+.trust{background:var(--paper);border-bottom:1px solid var(--line);padding:5rem 0}
+.trust-lead{display:flex;align-items:center;gap:.9rem;font-family:var(--gothic);font-weight:500;font-size:.9rem;letter-spacing:.1em;color:var(--gray);margin-bottom:2.4rem}
+.trust-lead .ln{flex:0 0 34px;width:34px;height:1px;background:var(--amber)}
+.trust-wall{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.trust-wall li{background:var(--paper);display:flex;align-items:center;justify-content:center;text-align:center;min-height:98px;padding:1.2rem 1rem;font-family:var(--gothic);font-weight:700;font-size:.98rem;letter-spacing:.02em;line-height:1.55;color:var(--ink-2);transition:color .25s var(--ease),background .25s var(--ease)}
+.trust-wall li:hover{color:var(--amber);background:var(--cream)}
+.trust-note{margin-top:2.2rem;color:var(--gray);font-size:.95rem;line-height:1.95;max-width:62ch}
+@media(max-width:820px){.trust-wall{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){.trust{padding:3.6rem 0}.trust-wall{grid-template-columns:repeat(2,1fr)}.trust-wall li{min-height:82px;font-size:.9rem;padding:1rem .7rem}}
 
 /* ===== section head ===== */
 section{position:relative}
@@ -260,7 +271,7 @@ section{position:relative}
 .quote{margin-top:1.4rem;padding:1.3rem 1.6rem;border-left:3px solid var(--amber);background:var(--paper)}
 .quote p{font-family:var(--gothic);font-style:normal;color:var(--ink);font-weight:500;margin-bottom:.3rem}
 .quote cite{display:block;text-align:right;font-style:normal;font-size:.82rem;color:var(--gray-2)}
-.act-cta{text-align:center;margin-top:3.4rem}
+.act-cta{display:flex;justify-content:center;flex-wrap:wrap;gap:1rem;margin-top:3.4rem}
 /* activity log (text-only records) */
 .act-sub{margin:4.5rem 0 0}
 .act-sub .top{display:flex;align-items:center;gap:1rem;margin-bottom:.4rem}
