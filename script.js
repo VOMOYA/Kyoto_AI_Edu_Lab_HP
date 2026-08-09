@@ -1,59 +1,62 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+document.addEventListener('DOMContentLoaded', function () {
+    // ---------- Mobile nav (hamburger) ----------
+    const bar = document.querySelector('nav.bar');
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.getElementById('nav-menu');
+    if (bar && toggle && menu) {
+        const setOpen = (open) => {
+            bar.classList.toggle('open', open);
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        };
+        toggle.addEventListener('click', () => setOpen(!bar.classList.contains('open')));
+        // タップで各リンクへ移動したらメニューを閉じる
+        menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+        // Escで閉じる
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
+        // デスクトップ幅に戻ったら状態リセット
+        window.addEventListener('resize', () => { if (window.innerWidth > 760) setOpen(false); }, { passive: true });
+    }
+
+    // ---------- Smooth scrolling ----------
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href === '#' || href.length < 2) return;
+            const target = document.querySelector(href);
+            if (!target) return;
             e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 70, // Adjust for header height
-                    behavior: 'smooth'
-                });
-            }
+            window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
         });
     });
-    
-    // Form submission handling
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            // フォームはaction属性で処理されるので、preventDefault()は削除
-            // e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            
-            // メールクライアントが開かれる前に確認メッセージを表示
-            alert(`${name}様、フォームを送信します。メールクライアントが開きます。`);
-            
-            // フォームの送信はHTMLのaction属性で処理
-            // フォーム送信後にリセットする処理はそのまま残す
-            // contactForm.reset(); // メールクライアントが開くため、ここでのリセットは不要
-        });
+
+    // ---------- Reveal on scroll ----------
+    const revealTargets = document.querySelectorAll('.rv, .reveal, .reveal-stagger');
+    if ('IntersectionObserver' in window && revealTargets.length) {
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in');
+                    entry.target.classList.add('visible');
+                    io.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        revealTargets.forEach(el => io.observe(el));
+    } else {
+        revealTargets.forEach(el => { el.classList.add('in'); el.classList.add('visible'); });
     }
-    
-    // Add animation on scroll
-    const animateOnScroll = function() {
-        const elements = document.querySelectorAll('.card, .column');
-        
-        elements.forEach(element => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.3;
-            
-            if (elementPosition < screenPosition) {
-                element.classList.add('visible');
-            }
-        });
-    };
-    
-    // Initial check on load
-    animateOnScroll();
-    
-    // Check on scroll
-    window.addEventListener('scroll', animateOnScroll);
+
+    // ---------- Floating CTA visibility ----------
+    const floating = document.querySelector('.floating-cta');
+    if (floating) {
+        const heroEl = document.querySelector('.hero-home, .hero');
+        const heroHeight = (heroEl && heroEl.offsetHeight) || 600;
+        const toggleFloating = () => {
+            floating.style.opacity = (window.scrollY > heroHeight * 0.6) ? '1' : '0';
+        };
+        floating.style.transition = 'opacity 0.3s ease';
+        floating.style.opacity = '0';
+        toggleFloating();
+        window.addEventListener('scroll', toggleFloating, { passive: true });
+    }
 });
