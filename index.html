@@ -6,23 +6,21 @@
     <title>Kyoto AI×Edu Lab(KAEL) | 京都のAI×教育コミュニティ</title>
     <meta name="description" content="京都発・先生と学習者のための AI 教育コミュニティ KAEL の公式サイト。ワークショップ情報やリソースを公開中.">
     <meta name="keywords" content="KAEL, Kyoto AI×Edu Lab, AI, 教育, 京都, ワークショップ, コミュニティ, 生成AI, 教員, 学習者">
-    
-    <!-- OGP (Open Graph Protocol) -->
+
+    <!-- OGP -->
     <meta property="og:title" content="Kyoto AI×Edu Lab(KAEL) | 京都のAI×教育コミュニティ">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://vomoya.github.io/Kyoto_AI_Edu_Lab_HP/">
     <meta property="og:image" content="https://vomoya.github.io/Kyoto_AI_Edu_Lab_HP/images/logo3.png">
     <meta property="og:description" content="京都発・先生と学習者のための AI 教育コミュニティ KAEL の公式サイト。ワークショップ情報やリソースを公開中.">
     <meta property="og:site_name" content="Kyoto AI×Edu Lab(KAEL)">
-    
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@vomoya1">
     <meta name="twitter:title" content="Kyoto AI×Edu Lab(KAEL) | 京都のAI×教育コミュニティ">
-    <meta name="twitter:description" content="京都発・先生と学習者のための AI 教育コミュニティ KAEL の公式サイト。ワークショップ情報やリソースを公開中.">
+    <meta name="twitter:description" content="京都発・先生と学習者のための AI 教育コミュニティ KAEL の公式サイト。">
     <meta name="twitter:image" content="https://vomoya.github.io/Kyoto_AI_Edu_Lab_HP/images/logo3.png">
 
-    <!-- Structured Data (JSON-LD) -->
+    <!-- Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -31,212 +29,324 @@
       "alternateName": "KAEL",
       "url": "https://vomoya.github.io/Kyoto_AI_Edu_Lab_HP/",
       "logo": "https://vomoya.github.io/Kyoto_AI_Edu_Lab_HP/images/logo3.png",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "customer support",
-        "url": "https://forms.gle/zc6ardHd5rUVdgnz7"
-      },
-      "sameAs": [
-        "https://x.com/vomoya1",
-        "https://www.facebook.com/groups/717021830721476/",
-        "https://discord.gg/uAf2MXsdmn"
-      ]
+      "contactPoint": { "@type": "ContactPoint", "contactType": "customer support", "url": "https://forms.gle/zc6ardHd5rUVdgnz7" },
+      "sameAs": ["https://x.com/vomoya1","https://www.facebook.com/groups/717021830721476/","https://discord.gg/uAf2MXsdmn"]
     }
     </script>
+
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <img src="images/logo3.png" alt="KAELロゴ" class="nav-logo">KAEL（Kyoto AI×Edu Lab）
+    <nav class="bar">
+        <div class="wrap bar-in">
+            <a href="index.html" class="logo"><img src="images/logo3.png" alt="KAELロゴ">KAEL</a>
+            <button class="nav-toggle" aria-label="メニューを開閉" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
+            <ul id="nav-menu">
+                <li class="hide-sm"><a href="#about">About</a></li>
+                <li><a href="daihyo.html">代表</a></li>
+                <li class="hide-sm"><a href="#services">Services</a></li>
+                <li class="hide-sm"><a href="#activities">Activities</a></li>
+                <li><a href="#contact" class="nav-cta">参加する</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero-home">
+        <div class="wrap">
+            <span class="eyebrow"><span class="ln"></span><span class="kicker">Kyoto AI × Edu Lab</span><span class="ln"></span></span>
+            <img src="images/logo3.png" alt="KAELロゴ" class="hero-logo">
+            <h1>AI×教育で、学びを<span class="em">"かえる<span class="kael">(KAEL)</span>"</span>。<br>未来へ跳ぶ。</h1>
+            <p class="sub">Kyoto AI×Edu Lab は、AI を"パートナー"に。〈学び方〉も〈生き方〉もアップデートする、京都発の教育コミュニティです。</p>
+            <div class="btns">
+                <a href="https://discord.gg/uAf2MXsdmn" class="btn fill" target="_blank"><i class="mdi mdi-discord"></i>Discord に参加する</a>
+                <a href="#activities" class="btn line">活動実績を見る</a>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#activities">Activities</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+            <div class="meta">
+                <span><i class="mdi mdi-map-marker"></i>京都 / オンライン</span>
+                <span><i class="mdi mdi-school-outline"></i>先生・学習者・保護者向け</span>
+                <span><i class="mdi mdi-handshake-outline"></i>学校・自治体との連携実績多数</span>
+            </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero-center">
-        <div class="container">
-            <img src="images/logo3.png" alt="KAELロゴ" class="hero-logo">
-<h1>AI×教育で、学びを"かえる(KAEL)"。未来へ跳ぶ。</h1>
-            <p class="subheading">Kyoto AI×Edu Lab は、AI をパートナーに<br>
-                <学び方>も<生き方>もアップデートできる拠点です。</p>
-                <div class="buttons">
-                    <a href="https://discord.gg/uAf2MXsdmn" class="btn primary" target="_blank">Discord に参加する</a>
-                </div>
+    <!-- Full-bleed visual -->
+    <section class="hero-visual">
+        <img src="images/workshop4.jpg" alt="KAEL ワークショップの様子">
+        <div class="cap">
+            <div class="wrap">
+                <span class="en">Workshop</span>
+                <span class="ln"></span>
+                <span class="jp">AI×教育の実践現場から。</span>
+            </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="two-column">
-        <div class="container">
-            <div class="row">
-                <div class="column">
-                    <h2>Mission / Vision</h2>
-                    <div class="content">
-                        <h3>Mission</h3>
-                        <p>学ぶすべての人が AI を"パートナー"に、学び方も生き方もアップデートできる拠点となる。</p>
-                        
-                        <h3>Vision</h3>
-                        <ul>
-                            <li>2028 年までに京都市内の全学校で「教師と学習者発 AI ツール」が日常利用される。</li>
-                            <li>"かえる(KAEL)"体験を共有し、全国へ波及するモデルを創出する。</li>
-                            <li>AI と共に子どもも大人も探究へ跳び込む文化を築く。</li>
-                        </ul>
-                    </div>
+    <!-- Facts -->
+    <section class="facts">
+        <div class="wrap facts-in">
+            <div class="fact rv"><div class="n">4<small>+</small></div><div class="l">連携・実績校</div></div>
+            <div class="fact rv rv-d1"><div class="n">月1<small>回</small></div><div class="l">オンラインLT・ミートアップ</div></div>
+            <div class="fact rv rv-d2"><div class="n">16<small>年</small></div><div class="l">代表の小学校現場経験</div></div>
+            <div class="fact rv rv-d3"><div class="n">京都</div><div class="l">拠点／全国・オンライン対応</div></div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about">
+        <div class="wrap">
+            <div class="sec-head rv">
+                <div class="top"><span class="ln"></span><span class="kicker">About</span><span class="num">01</span></div>
+      <h2>Mission / Vision / Values</h2>
+            </div>
+            <div class="mvv rv">
+                <div class="mvv-col">
+                    <div class="en">Why we exist</div>
+                    <h3>Mission</h3>
+                    <p class="big">学ぶすべての人が AI を"パートナー"に、学び方も生き方もアップデートできる拠点となる。</p>
+                    <h3 style="margin-top:1.6rem">Vision</h3>
+                    <ul>
+                        <li>2028年までに京都市内の全学校で「教師と学習者発 AIツール」が日常利用される。</li>
+                        <li>"かえる(KAEL)"体験を共有し、全国へ波及するモデルを創出する。</li>
+                        <li>AI と共に子どもも大人も探究へ跳び込む文化を築く。</li>
+                    </ul>
                 </div>
-                <div class="column">
-                    <h2>Values</h2>
-                    <div class="content">
-                        <ol>
-                            <li><strong>Jump First</strong> — まずは小さく跳んで試そう。</li>
-                            <li><strong>Open Share</strong> — 成功も失敗もオープンに分かち合う。</li>
-                            <li><strong>Co-Create</strong> — 教師・学習者・AI が共に学び合い、高め合う。</li>
-                            <li><strong>Respect Reality</strong> — 現場の文脈と当事者の声を最優先に。</li>
-                            <li><strong>Future Craft</strong> — 教室から未来をデザインし続ける。</li>
-                        </ol>
-                        <div class="peatix-widget-container" style="max-width: 400px; margin-left: auto; margin-right: auto;">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/f2JRBu-Wd4Q?si=31TUzdwLgWdbP_IG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        </div>
-                    </div>
+                <div class="mvv-col values">
+                    <div class="en">How we act</div>
+                    <h3>Values</h3>
+                    <ol>
+                        <li><strong>Jump First</strong>まずは小さく跳んで試そう。</li>
+                        <li><strong>Open Share</strong>成功も失敗もオープンに分かち合う。</li>
+                        <li><strong>Co-Create</strong>教師・学習者・AI が共に学び合い、高め合う。</li>
+                        <li><strong>Respect Reality</strong>現場の文脈と当事者の声を最優先に。</li>
+                        <li><strong>Future Craft</strong>教室から未来をデザインし続ける。</li>
+                    </ol>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="icon-cards">
-        <div class="container">
-            <h2 class="section-title">Services</h2>
-            <div class="cards">
-                <div class="card">
-                    <span class="icon"><i class="mdi mdi-laptop-account"></i></span>
+    <!-- Profile teaser -->
+    <section id="profile" class="profile">
+        <div class="wrap">
+            <div class="sec-head rv">
+                <div class="top"><span class="ln"></span><span class="kicker">Representative</span><span class="num">02</span></div>
+      <h2>代表について</h2>
+            </div>
+            <div class="profile-card rv">
+                <div class="profile-photo">
+                    <div class="frame"><img src="images/kitada.jpg" alt="北田朋也"></div>
+                </div>
+                <div class="profile-content">
+                    <div class="en">Tomoya Kitada</div>
+                    <h3>北田 朋也</h3>
+                    <p class="profile-role">KAEL 代表 ／ 教育コーディネーター・社会教育士</p>
+                    <p class="profile-bio">京都市立小学校で16年間勤務し、探究学習主任・研究主任・カリキュラムマネジメント推進主任として、学校全体の学習設計と校内研究を担う。2025年に独立後、社会教育士として学校・地域・行政をつなぐ立場から、探究学習の単元設計、教員研修、生成AI・ICTの教育活用支援に取り組む。「現場を16年生きた人間が、AIで学校を変える」をミッションに、KAEL を立ち上げました。</p>
+                    <ul class="profile-chips">
+                        <li>公立小学校教員 16年</li>
+                        <li>社会教育士</li>
+                        <li>生成AIパスポート</li>
+                        <li>探究学習設計</li>
+                        <li>教員研修ファシリテーション</li>
+                    </ul>
+                    <a href="daihyo.html" class="read-more">代表について詳しく読む<i class="mdi mdi-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="expertise">
+        <div class="wrap">
+            <div class="sec-head rv">
+                <div class="top"><span class="ln"></span><span class="kicker">Services</span><span class="num">03</span></div>
+      <h2>KAELで体験できること</h2>
+            </div>
+            <p class="sec-desc rv">教員も学習者も保護者も。AIと共に試して、学んで、つながる場を提供しています。</p>
+            <div class="exp-grid">
+                <div class="exp-col rv">
+                    <div class="ic"><i class="mdi mdi-laptop-account"></i></div>
+                    <div class="en">Workshop</div>
                     <h3>ワークショップ</h3>
-                    <p>vibe coding のハンズオンで「15 分で動く AI ツール」を体験。</p>
+                    <p>vibe coding のハンズオンで「15分で動く AIツール」を体験。先生も生徒も、手を動かしながら学べます。</p>
                 </div>
-                <div class="card">
-                    <span class="icon"><i class="mdi mdi-forum-outline"></i></span>
+                <div class="exp-col rv rv-d1">
+                    <div class="ic"><i class="mdi mdi-forum-outline"></i></div>
+                    <div class="en">Community</div>
                     <h3>コミュニティ HUB</h3>
-                    <p>Discord で質問・アイデア共有。月1回オンライン LT 開催。</p>
+                    <p>Discord で日常的に質問・アイデア共有。月1回オンラインLT を開催し、現場の知見を共有しています。</p>
                 </div>
-                <div class="card">
-                    <span class="icon"><i class="mdi mdi-code-tags"></i></span>
+                <div class="exp-col rv rv-d2">
+                    <div class="ic"><i class="mdi mdi-code-tags"></i></div>
+                    <div class="en">Resource</div>
                     <h3>リソース共有</h3>
-                    <p>GitHub / Notion にプロンプト集・教材テンプレを公開。</p>
+                    <p>GitHub・Notion にプロンプト集や教材テンプレを公開。明日の授業からすぐ使える形で配布します。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Activities Section -->
+    <!-- Activities -->
     <section id="activities" class="activities">
-        <div class="container">
-            <h2 class="section-title">活動実績</h2>
-            <p class="section-description">Kyoto AI×Edu Labの主な活動とイベントをご紹介します</p>
-            
-            <div class="activity-grid">
-                <div class="activity-item">
-                    <div class="activity-image">
-                        <img src="images/workshop4.jpg" alt="Google AIで業務効率アップ">
-                    </div>
-                    <div class="activity-content">
+        <div class="wrap">
+            <div class="sec-head rv">
+                <div class="top"><span class="ln"></span><span class="kicker">Activities</span><span class="num">04</span></div>
+      <h2>活動実績</h2>
+            </div>
+            <p class="sec-desc rv">これまでに開催したワークショップ・教員研修・ミートアップの一部をご紹介します。</p>
+
+            <div class="act-list">
+                <article class="act rv">
+                    <div class="act-media"><img src="images/workshop4.jpg" alt="Google AIで業務効率アップ"></div>
+                    <div class="act-body">
+                        <div class="act-tag">Seminar — 体験会・セミナー</div>
                         <h3>Google AIで業務効率アップ</h3>
-                        <p class="activity-date">2025年8月28日(木) 21:00～22:00</p>
-                        <p>8/28(木) 21:00〜 AI×教育 実践紹介＆体験会 開催！<br>
-                        講師は、生成AIと毎日戯れる元中学校教員 ぐりこ先生が登壇！<br>
-                        ✨実際に使える！すぐに役立つ！Google AIツールの活用法を、現場目線で紹介＆体験‍<br>
-                        参加無料｜教育関係者歓迎！</p>
-                        <div class="peatix-widget-container">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/sBvTdpv4odY?si=lkJ6ZUKVnS-37fP1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/QRR0ZAYUK1s?si=LB19_T6GQQHdT8oz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <p class="act-date">2025.08.28 (木) 21:00–22:00</p>
+                        <p>「AI×教育 実践紹介＆体験会」を開催。生成AIと毎日戯れる元中学校教員ぐりこ先生を講師に迎え、Google AIツールの活用法を現場目線で紹介＆体験。教育関係者を中心に多くの方にご参加いただきました。</p>
+                        <div class="act-embeds">
+                            <iframe src="https://www.youtube.com/embed/sBvTdpv4odY?si=lkJ6ZUKVnS-37fP1" title="セッションアーカイブ1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/QRR0ZAYUK1s?si=LB19_T6GQQHdT8oz" title="セッションアーカイブ2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
                     </div>
-                </div>
-                <div class="activity-item">
-                    <div class="activity-image">
-                        <img src="images/workshop1.jpg" alt="AI×教育ワークショップの様子">
-                    </div>
-                    <div class="activity-content">
-                        <h3>AI×教育ワークショップ</h3>
-                        <p class="activity-date">2025年5月22日</p>
-                        <p>京都市立葵小学校で教員約30名を対象に、探究学習でのAI活用方法について実践的なワークショップを開催しました。参加者は実際にAIツールを使って活動計画を作成したり、AIを使いながら探究学習のサポートの仕方を学びました。</p>
-                        <div class="testimonial">
+                </article>
+
+                <article class="act rv">
+                    <div class="act-media"><img src="images/workshop1.jpg" alt="AI×教育ワークショップの様子"></div>
+                    <div class="act-body">
+                        <div class="act-tag">Teacher Training — 教員研修</div>
+                        <h3>AI×教育ワークショップ ｜ 京都市立葵小学校</h3>
+                        <p class="act-date">2025.05.22</p>
+                        <p>京都市立葵小学校で教員約30名を対象に、探究学習でのAI活用方法について実践的なワークショップを開催。参加者は実際にAIツールを使って活動計画を作成しながら、探究学習のサポートの仕方を学びました。</p>
+                        <div class="quote">
                             <p>"初めてAIを使った授業設計を体験しましたが、想像以上に使いやすく、新しいアイデアが生まれました。"</p>
-                            <span class="testimonial-author">- 京都市立葵小学校 教諭</span>
+                            <cite>— 京都市立葵小学校 教諭</cite>
                         </div>
                     </div>
-                </div>
-                
-                <div class="activity-item">
-                    <div class="activity-image">
-                        <img src="images/workshop2.jpg" alt="生徒向けAIリテラシー講座">
-                    </div>
-                    <div class="activity-content">
+                </article>
+
+                <article class="act rv">
+                    <div class="act-media"><img src="images/workshop2.jpg" alt="生徒向けAIリテラシー講座"></div>
+                    <div class="act-body">
+                        <div class="act-tag">For Learners — 学習者向け</div>
                         <h3>生徒向けAIリテラシー講座</h3>
-                        <p class="activity-date">募集中</p>
-                        <p>小学生～高校生を対象にAIリテラシーを学ぶ講座を実施。AIの基本的な仕組みから倫理的な課題まで、実際に体験しながら学べるワークショップをします。</p>
-                        <div class="testimonial">
-                            <p>　</p>
-                            <span class="testimonial-author">　</span>
+                        <p class="act-date">募集中</p>
+                        <p>小学生〜高校生を対象に、AIリテラシーを学ぶ講座を実施。AIの基本的な仕組みから倫理的な課題まで、実際に体験しながら学べるワークショップを行います。</p>
+                    </div>
+                </article>
+
+                <article class="act rv">
+                    <div class="act-media"><img src="images/workshop3.jpg" alt="教育×AIミートアップ"></div>
+                    <div class="act-body">
+                        <div class="act-tag">Community — コミュニティ</div>
+                        <h3>教育×AIミートアップ</h3>
+                        <p class="act-date">毎月開催</p>
+                        <p>月例オンラインミートアップを開催中。教育現場でのAI活用事例の共有や、参加者同士のディスカッションができます。これまでのセミナー・体験会アーカイブはDiscordでメンバーに無料公開しています。</p>
+                        <div style="margin-top:1.4rem">
+                            <a href="https://discord.gg/uAf2MXsdmn" class="btn line-dark" target="_blank"><i class="mdi mdi-play-circle-outline"></i>アーカイブを見る</a>
                         </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="act-sub rv">
+                <div class="top"><span class="ln"></span><span class="kicker">Records</span></div>
+                <h3>研修・登壇の記録</h3>
+            </div>
+            <div class="act-log">
+                <div class="act-row rv">
+                    <div class="d">2026.08.08</div>
+                    <div>
+                        <h4>マイクラ×防災 探究ワークショップ<span class="soon">開催予定</span></h4>
+                        <div class="meta">小4〜中3対象・京都経済センター KOIN ／ 京大マインクラフト同好会（KUMC）× KAEL 共同主催</div>
+                        <p>Minecraftで身近な防災課題を見つけ、対策を制作・発表する探究型ワークショップ。</p>
                     </div>
                 </div>
-                
-                <div class="activity-item">
-                    <div class="activity-image">
-                        <img src="images/workshop3.jpg" alt="教育×AIミートアップ">
+                <div class="act-row rv">
+                    <div class="d">2026.05.31</div>
+                    <div>
+                        <h4>ALLOUND デジタルファシリテーション講座 Day2</h4>
+                        <div class="meta">ファシリテーター・対話関係者向け（大阪）／ AIナレッジファシリテーターとして登壇</div>
+                        <p>参加者の声をリアルタイムで構造化し、場に返す進行を担当。</p>
                     </div>
-                    <div class="activity-content">
-                        <h3>教育×AIミートアップ</h3>
-                        <p class="activity-date">毎月開催予定</p>
-                        <p>月例オンラインミートアップを開催中。教育現場でのAI活用事例の共有や、参加者同士でのディスカッションができます。これまでのセミナーや体験会のアーカイブはDiscordでメンバーに無料公開しています。</p>
-                        <div class="buttons">
-                            <a href="https://discord.gg/uAf2MXsdmn" class="btn primary" target="_blank">Discordでアーカイブを見る</a>
-                        </div>
+                </div>
+                <div class="act-row rv">
+                    <div class="d">2026.05.01</div>
+                    <div>
+                        <h4>京都橘中学校・高等学校「学びの会」登壇</h4>
+                        <div class="meta">中高教員向け ／ 講師：北田朋也</div>
+                        <p>AI×教育の最先端動向を、エビデンスを引きながら教員向けに届けた講演。</p>
+                    </div>
+                </div>
+                <div class="act-row rv">
+                    <div class="d">2026.04.23</div>
+                    <div>
+                        <h4>Lcreate 女性起業家AI講座 講師</h4>
+                        <div class="meta">女性起業家・経営者向け（枚方）／ 主催：Lcreate</div>
+                        <p>「AIを"使う人"から"使いこなす人"へ」。業務でのAI活用を実践する90分講座。</p>
+                    </div>
+                </div>
+                <div class="act-row rv">
+                    <div class="d">2026.04.18</div>
+                    <div>
+                        <h4>AI共創型反転授業シンポジウム 登壇</h4>
+                        <div class="meta">教育関係者・一般向け（オンライン）／ AI Knowledge Facilitator</div>
+                        <p>AIで授業と学校がどう変わるかを、リアルタイムデモを交えて体験する公開シンポジウム。</p>
+                    </div>
+                </div>
+                <div class="act-row rv">
+                    <div class="d">2026.03.27</div>
+                    <div>
+                        <h4>枚方市立川越小学校 AI教員研修</h4>
+                        <div class="meta">教職員向け ／ 講師：北田朋也</div>
+                        <p>「Gemini × NotebookLM で4月の授業を変える」。一人一台端末・生成AI活用に向けた授業設計研修。</p>
+                    </div>
+                </div>
+                <div class="act-row rv">
+                    <div class="d">2026.03</div>
+                    <div>
+                        <h4>かえつ有明 AI教員研修（全3回）</h4>
+                        <div class="meta">中高教員向け（オンライン）／ テクニカルファシリテーター担当</div>
+                        <p>反転授業・AIチューター・ジャストインタイム学習をテーマにした教員向け連続研修。</p>
                     </div>
                 </div>
             </div>
-            
-            <div class="cta-container">
-                <a href="https://discord.gg/uAf2MXsdmn" class="btn primary" target="_blank">コミュニティに参加する</a>
+
+            <div class="act-cta rv">
+                <a href="https://discord.gg/uAf2MXsdmn" class="btn fill" target="_blank"><i class="mdi mdi-discord"></i>コミュニティに参加する</a>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-form">
-        <div class="container">
-            <h2>KAEL(Kyoto AI×Edu Lab)へ参加する</h2>
-            <p>ワークショップ参加・コラボ相談・メディア取材など、お気軽にご連絡ください。</p>
-            
-            <div class="buttons contact-buttons">
-                <a href="https://discord.gg/uAf2MXsdmn" class="btn primary" target="_blank">Discord に参加する</a>
-                <a href="https://forms.gle/zc6ardHd5rUVdgnz7" class="btn secondary" target="_blank">お問い合わせフォーム</a>
+    <!-- Contact -->
+    <section id="contact" class="cta">
+        <div class="wrap">
+            <span class="label">Join us</span>
+            <h2>KAEL（Kyoto AI×Edu Lab）へ参加する</h2>
+            <p>ワークショップ参加・コラボ相談・メディア取材など、お気軽にご連絡ください。Discord ではメンバー同士の交流と過去アーカイブの閲覧ができます。</p>
+            <div class="cta-btns">
+                <a href="https://discord.gg/uAf2MXsdmn" class="btn fill" target="_blank"><i class="mdi mdi-discord"></i>Discord に参加する</a>
+                <a href="https://forms.gle/zc6ardHd5rUVdgnz7" class="btn line" target="_blank"><i class="mdi mdi-email-outline"></i>お問い合わせフォーム</a>
             </div>
-            
             <div class="socials">
-                <a href="https://discord.gg/uAf2MXsdmn" target="_blank"><i class="mdi mdi-discord"></i></a>
-                <a href="https://x.com/vomoya1" target="_blank"><i class="mdi mdi-twitter"></i></a>
-                <a href="https://www.facebook.com/groups/717021830721476/" target="_blank"><i class="mdi mdi-facebook"></i></a>
+                <a href="https://discord.gg/uAf2MXsdmn" target="_blank" aria-label="Discord"><i class="mdi mdi-discord"></i></a>
+                <a href="https://x.com/vomoya1" target="_blank" aria-label="X (Twitter)"><i class="mdi mdi-twitter"></i></a>
+                <a href="https://www.facebook.com/groups/717021830721476/" target="_blank" aria-label="Facebook"><i class="mdi mdi-facebook"></i></a>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2025 Kyoto AI×Edu Lab (KAEL). All rights reserved.</p>
+        <div class="wrap f-in">
+            <span class="logo"><img src="images/logo3.png" alt="KAEL">Kyoto AI×Edu Lab</span>
+            <small>&copy; 2025 Kyoto AI×Edu Lab (KAEL). All rights reserved.</small>
         </div>
     </footer>
+
+    <a href="https://discord.gg/uAf2MXsdmn" class="floating-cta" target="_blank"><i class="mdi mdi-discord"></i>参加する</a>
 
     <script src="script.js"></script>
 </body>
