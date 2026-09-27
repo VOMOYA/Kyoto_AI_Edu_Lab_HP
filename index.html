@@ -41,6 +41,54 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
 </head>
 <body>
+    <!-- Opening（初回アクセス時だけ15秒ムービーを流す。?intro=1 で強制表示） -->
+    <div id="intro" class="intro" aria-label="オープニングムービー">
+        <img src="images/logo3.png" alt="" class="intro-wait">
+        <video class="intro-video" src="videos/kael_reel_2026.mp4" muted playsinline preload="auto"></video>
+        <div class="intro-ui">
+            <button class="intro-sound" type="button"><i class="mdi mdi-volume-off"></i><span>音声ON</span></button>
+            <button class="intro-skip" type="button">スキップ<i class="mdi mdi-chevron-right"></i></button>
+        </div>
+    </div>
+    <script>
+    (function () {
+        var el = document.getElementById('intro'), root = document.documentElement;
+        var force = /[?&]intro=1/.test(location.search), seen = false;
+        try { seen = localStorage.getItem('kaelIntroSeen') === '1'; } catch (e) {}
+        var saveData = navigator.connection && navigator.connection.saveData;
+        var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!force && (seen || location.hash || reduce || saveData)) { el.remove(); return; }
+        root.classList.add('intro-on');
+        var v = el.querySelector('.intro-video'), done = false;
+        function close() {
+            if (done) return; done = true;
+            try { localStorage.setItem('kaelIntroSeen', '1'); } catch (e) {}
+            el.classList.add('out'); root.classList.remove('intro-on');
+            setTimeout(function () { v.pause(); el.remove(); }, 900);
+        }
+        // 3秒以内に再生が始まらなければ待たせずに本編へ
+        var guard = setTimeout(close, 3000);
+        v.addEventListener('playing', function () { clearTimeout(guard); el.classList.add('playing'); }, { once: true });
+        // 上下（縦長端末は上下・横長端末は左右）の余白を場面の色に合わせ、全画面で流れているように見せる
+        var BG = ['#e2dcd6', '#d35826', '#0b1925', '#0b1925', '#0e2331', '#0b1925', '#0b1925', '#e1dbd5'], cur = -1;
+        (function tick() {
+            if (done) return;
+            var i = Math.min(7, Math.floor(v.currentTime / (4 * 60 / 128)));
+            if (i !== cur) { cur = i; el.style.backgroundColor = BG[i]; }
+            requestAnimationFrame(tick);
+        })();
+        v.addEventListener('ended', close);
+        v.addEventListener('error', close);
+        var p = v.play(); if (p && p.catch) p.catch(close);
+        el.querySelector('.intro-skip').addEventListener('click', close);
+        el.querySelector('.intro-sound').addEventListener('click', function () {
+            v.muted = !v.muted;
+            this.querySelector('i').className = v.muted ? 'mdi mdi-volume-off' : 'mdi mdi-volume-high';
+            this.querySelector('span').textContent = v.muted ? '音声ON' : '音声OFF';
+        });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+    })();
+    </script>
     <nav class="bar">
         <div class="wrap bar-in">
             <a href="index.html" class="logo"><img src="images/logo3.png" alt="KAELロゴ">KAEL</a>
