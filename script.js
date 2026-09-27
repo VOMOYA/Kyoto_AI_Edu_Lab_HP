@@ -59,4 +59,38 @@ document.addEventListener('DOMContentLoaded', function () {
         toggleFloating();
         window.addEventListener('scroll', toggleFloating, { passive: true });
     }
+
+    // ---------- Reel（画面内で自動再生・音声トグル） ----------
+    const reelFrame = document.querySelector('.reel-frame');
+    const reel = reelFrame && reelFrame.querySelector('.reel-video');
+    if (reel) {
+        const soundBtn = document.querySelector('.reel-sound');
+        const playBtn = reelFrame.querySelector('.reel-play');
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        let userPaused = reduce;
+        const sync = () => reelFrame.classList.toggle('paused', reel.paused);
+        const tryPlay = () => { const p = reel.play(); if (p && p.catch) p.catch(() => sync()); };
+        reel.addEventListener('play', sync);
+        reel.addEventListener('pause', sync);
+        sync();
+        if ('IntersectionObserver' in window) {
+            new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting && !userPaused) tryPlay();
+                    else if (!e.isIntersecting) reel.pause();
+                });
+            }, { threshold: 0.45 }).observe(reelFrame);
+        } else if (!reduce) { tryPlay(); }
+        const toggle = () => { if (reel.paused) { userPaused = false; tryPlay(); } else { userPaused = true; reel.pause(); } };
+        reel.addEventListener('click', toggle);
+        playBtn.addEventListener('click', toggle);
+        soundBtn.addEventListener('click', () => {
+            const on = reel.muted;
+            reel.muted = !on;
+            if (on) { reel.currentTime = 0; userPaused = false; tryPlay(); }
+            soundBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+            soundBtn.querySelector('i').className = on ? 'mdi mdi-volume-high' : 'mdi mdi-volume-off';
+            soundBtn.querySelector('span').textContent = on ? '音声をOFFにする' : '音声をONにする';
+        });
+    }
 });
