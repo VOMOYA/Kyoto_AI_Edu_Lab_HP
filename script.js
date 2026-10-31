@@ -46,6 +46,80 @@ document.addEventListener('DOMContentLoaded', function () {
         revealTargets.forEach(el => { el.classList.add('in'); el.classList.add('visible'); });
     }
 
+    // ---------- News（開催日を過ぎたカードは自動で隠す・カウントダウン・早割表示） ----------
+    // 日付は日本時間で判定する（海外からの閲覧でもずれないように）
+    const todayJST = () => new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
+    const dayDiff = (a, b) => Math.round((Date.parse(a) - Date.parse(b)) / 864e5);
+    const news = document.getElementById('news');
+    if (news) {
+        const today = todayJST();
+        const cards = [...news.querySelectorAll('.ev[data-date]')];
+        cards.forEach(card => {
+            const left = dayDiff(card.dataset.date, today);
+            if (left < 0) { card.hidden = true; return; }
+            const cnt = card.querySelector('.ev-count');
+            if (cnt) cnt.textContent = left === 0 ? '本日開催' : left === 1 ? '明日開催' : `あと${left}日`;
+            card.querySelectorAll('[data-until]').forEach(el => { if (today > el.dataset.until) el.remove(); });
+        });
+        const live = cards.filter(c => !c.hidden);
+        // 開催日の近い順に並べ替え
+        live.sort((a, b) => a.dataset.date.localeCompare(b.dataset.date)).forEach(c => c.parentNode.appendChild(c));
+        const grid = news.querySelector('.news-grid');
+        if (grid) grid.classList.toggle('one', live.length === 1);
+        if (!live.length) {
+            news.hidden = true;
+            document.querySelectorAll('a[href="#news"]').forEach(a => { const li = a.closest('li'); (li || a).remove(); });
+        }
+    }
+
+    // ---------- Records（カテゴリ絞り込み＋最初は新しい順に数件だけ表示） ----------
+    const log = document.getElementById('act-log');
+    if (log) {
+        const LIMIT = 6;
+        const rows = [...log.querySelectorAll('.act-row')];
+        const chips = [...document.querySelectorAll('.log-tools .chip')];
+        const more = document.querySelector('.log-more');
+        const moreBtn = more && more.querySelector('.log-more-btn');
+        let filter = 'all', expanded = false;
+        chips.forEach(ch => {
+            const f = ch.dataset.f;
+            const n = f === 'all' ? rows.length : rows.filter(r => r.dataset.cat === f).length;
+            const span = ch.querySelector('.n'); if (span) span.textContent = n;
+            if (!n) ch.hidden = true;
+        });
+        const render = () => {
+            const hit = rows.filter(r => filter === 'all' || r.dataset.cat === filter);
+            const cut = !expanded && hit.length > LIMIT;
+            rows.forEach(r => { r.hidden = true; });
+            hit.forEach((r, i) => {
+                r.hidden = cut && i >= LIMIT;
+                if (!r.hidden) r.classList.add('in');
+            });
+            if (more) {
+                more.hidden = hit.length <= LIMIT;
+                more.classList.toggle('fade', cut);
+                moreBtn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+                moreBtn.querySelector('.t').textContent = expanded ? '閉じる' : 'すべての記録を見る';
+                moreBtn.querySelector('.c').textContent = expanded ? '' : `残り${hit.length - LIMIT}件`;
+            }
+        };
+        chips.forEach(ch => ch.addEventListener('click', () => {
+            filter = ch.dataset.f; expanded = false;
+            chips.forEach(c => { const on = c === ch; c.classList.toggle('is-on', on); c.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+            render();
+        }));
+        if (moreBtn) moreBtn.addEventListener('click', () => {
+            const wasOpen = expanded;
+            expanded = !expanded; render();
+            // 閉じたときは記録の先頭へ戻す（ページの途中に取り残さない）
+            if (wasOpen) {
+                const head = document.querySelector('.act-sub');
+                if (head) window.scrollTo({ top: head.getBoundingClientRect().top + window.scrollY - 90, behavior: 'smooth' });
+            }
+        });
+        render();
+    }
+
     // ---------- Floating CTA visibility ----------
     const floating = document.querySelector('.floating-cta');
     if (floating) {

@@ -94,6 +94,7 @@
             <a href="index.html" class="logo"><img src="images/logo3.png" alt="KAELロゴ">KAEL</a>
             <button class="nav-toggle" aria-label="メニューを開閉" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
             <ul id="nav-menu">
+                <li class="nav-news"><a href="#news">News</a></li>
                 <li class="hide-sm"><a href="#about">About</a></li>
                 <li><a href="daihyo.html">代表</a></li>
                 <li class="hide-sm"><a href="#services">Services</a></li>
@@ -121,6 +122,79 @@
             </div>
         </div>
     </header>
+
+    <!-- News / 開催予定（data-date を過ぎたカードは自動で非表示。全部終わったらセクションごと消える） -->
+    <section id="news" class="news" aria-labelledby="news-h">
+        <div class="wrap">
+            <div class="news-head rv">
+                <div class="top"><span class="ln"></span><span class="kicker">News</span><span class="num">Upcoming</span></div>
+                <h2 id="news-h">お知らせ・開催予定</h2>
+                <p>参加者を募集しているイベントです。どなたでもお申し込みいただけます。</p>
+            </div>
+
+            <div class="news-grid">
+                <article class="ev rv" data-date="2026-12-26">
+                    <a class="ev-media" href="https://peatix.com/event/5210934" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                        <img src="images/taiwa_lab_05_20261226.jpg" alt="" loading="lazy">
+                    </a>
+                    <div class="ev-body">
+                        <div class="ev-when">
+                            <time class="ev-date" datetime="2026-12-26"><span class="m">2026.12</span><span class="d">26</span><span class="w">SAT</span></time>
+                            <div class="ev-flags">
+                                <span class="ev-badge">受付中</span>
+                                <span class="ev-count" aria-live="polite"></span>
+                            </div>
+                        </div>
+                        <p class="ev-tag">対話する学校ラボ 第5回 ／ 特別回</p>
+                        <h3>システム思考×対話<small>毎年くり返す「すれ違い」を構造で見る一日</small></h3>
+                        <ul class="ev-facts">
+                            <li><i class="mdi mdi-clock-outline" aria-hidden="true"></i>10:30〜16:30</li>
+                            <li><i class="mdi mdi-map-marker-outline" aria-hidden="true"></i>京都文教小学校（京都市左京区）・対面</li>
+                            <li><i class="mdi mdi-account-voice" aria-hidden="true"></i>ゲスト：渋谷聡子さん（ファミリーコンパス代表）</li>
+                            <li><i class="mdi mdi-ticket-outline" aria-hidden="true"></i>年会員は無料</li>
+                        </ul>
+                        <p class="ev-desc">会議のすれ違いや、意見が出ないまま終わる話し合いを、誰かのせいではなく「構造」として見つめる。安心・安全な場のつくり方を、丸一日のワークで体験します。</p>
+                        <div class="ev-cta">
+                            <a class="btn fill" href="https://peatix.com/event/5210934" target="_blank" rel="noopener">詳細・申し込み<i class="mdi mdi-arrow-top-right" aria-hidden="true"></i></a>
+                        </div>
+                        <p class="ev-org">主催：対話する学校ラボ</p>
+                    </div>
+                </article>
+
+                <article class="ev rv rv-d1" data-date="2026-12-27">
+                    <a class="ev-media" href="https://claude.ai/artifact/7xz25wYGKjsFdEX2u4oiJe#moya" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                        <img src="images/hackathon_bonenkai_20261227.jpg" alt="" loading="lazy">
+                    </a>
+                    <div class="ev-body">
+                        <div class="ev-when">
+                            <time class="ev-date" datetime="2026-12-27"><span class="m">2026.12</span><span class="d">27</span><span class="w">SUN</span></time>
+                            <div class="ev-flags">
+                                <span class="ev-badge">受付中</span>
+                                <span class="ev-badge alt" data-until="2026-11-30">早割は11/30まで</span>
+                                <span class="ev-count" aria-live="polite"></span>
+                            </div>
+                        </div>
+                        <p class="ev-tag">名古屋 ／ ハッカソン×忘年会</p>
+                        <h3>教育×AI ハッカソン忘年会 in 名古屋<small>AIは働く。人間は忘年会。</small></h3>
+                        <ul class="ev-facts">
+                            <li><i class="mdi mdi-clock-outline" aria-hidden="true"></i>14:00〜18:30（受付13:30）</li>
+                            <li><i class="mdi mdi-map-marker-outline" aria-hidden="true"></i>名古屋駅から徒歩5分のレンタルスペース</li>
+                            <li><i class="mdi mdi-account-group-outline" aria-hidden="true"></i>定員20〜25名・4人1組のチーム制</li>
+                            <li><i class="mdi mdi-ticket-outline" aria-hidden="true"></i>早割2,000円／一般3,000円／学生1,000円（軽食・ドリンク込み）</li>
+                        </ul>
+                        <p class="ev-desc">チームで今年のモヤモヤを話し、その会話をAIに渡してアプリにしてから乾杯。愚痴が仕様書になるハッカソンです。プログラミング不要、AI初心者もひとりでの参加も歓迎。</p>
+                        <div class="ev-cta">
+                            <a class="btn fill" href="https://kyo-iku-hackathon20261227.peatix.com/" target="_blank" rel="noopener">申し込む（Peatix）<i class="mdi mdi-arrow-top-right" aria-hidden="true"></i></a>
+                            <a class="btn line-dark" href="https://claude.ai/artifact/7xz25wYGKjsFdEX2u4oiJe#moya" target="_blank" rel="noopener">特設ページ</a>
+                        </div>
+                        <p class="ev-org">主催：Kyoto AI×Edu Lab・及川直之・清水大輔</p>
+                    </div>
+                </article>
+            </div>
+
+            <p class="news-foot rv"><i class="mdi mdi-bell-ring-outline" aria-hidden="true"></i>最新のお知らせは <a href="https://discord.gg/uAf2MXsdmn" target="_blank" rel="noopener">Discordコミュニティ</a> でもお届けしています。</p>
+        </div>
+    </section>
 
     <!-- Reel（15秒のモーショングラフィックス） -->
     <section class="reel" aria-label="KAEL 紹介ムービー">
@@ -418,28 +492,15 @@
                 <div class="top"><span class="ln"></span><span class="kicker">Records</span></div>
                 <h3>研修・登壇の記録</h3>
             </div>
-            <div class="act-log">
-                <div class="act-row rv">
-                    <div class="d">2026.12.27</div>
-                    <div>
-                        <h4>教育×AI ハッカソン忘年会 in 名古屋<span class="soon">開催予定</span></h4>
-                        <div class="meta">2026年12月27日（日）14:00〜18:30（受付13:30）／ 名古屋駅から徒歩5分のレンタルスペース ／ 定員20〜25名 ／ 早割2,000円（11/30まで・先着10名）・一般3,000円・学生1,000円（軽食・ドリンク込み）／ 主催：Kyoto AI×Edu Lab・及川直之・清水大輔</div>
-                        <p>「AIは働く。人間は忘年会。」チームで今年のモヤモヤを話し、その会話をAIに渡してアプリにしてから乾杯する、愚痴が仕様書になるハッカソン。プログラミング不要・AI初心者やひとりでの参加も歓迎です。先生・保護者・塾や教室の運営者・地域で学びの場をつくる人・企業の人・エンジニアまで、教育にモヤモヤがある人ならどなたでも。</p>
-                        <p class="row-link"><a href="https://claude.ai/artifact/7xz25wYGKjsFdEX2u4oiJe#moya" target="_blank" rel="noopener"><i class="mdi mdi-open-in-new"></i>イベント特設ページ</a>　<a href="https://kyo-iku-hackathon20261227.peatix.com/" target="_blank" rel="noopener"><i class="mdi mdi-open-in-new"></i>詳細・お申し込み（Peatix）</a></p>
-                        <a class="row-img" href="https://claude.ai/artifact/7xz25wYGKjsFdEX2u4oiJe#moya" target="_blank" rel="noopener"><img src="images/hackathon_bonenkai_20261227.jpg" alt="教育×AI ハッカソン忘年会 in 名古屋（12/27）告知バナー" loading="lazy"></a>
-                    </div>
-                </div>
-                <div class="act-row rv">
-                    <div class="d">2026.12.26</div>
-                    <div>
-                        <h4>第5回 対話する学校ラボ「システム思考×対話」<span class="soon">開催予定</span></h4>
-                        <div class="meta">2026年12月26日（土）10:30〜16:30 ／ 京都文教小学校（京都市左京区）・対面 ／ ゲスト：渋谷聡子さん（ファミリーコンパス代表）／ 年会員無料 ／ 主催：対話する学校ラボ</div>
-                        <p>「毎年くり返す『すれ違い』を構造で見る一日」。会議のすれ違いや、意見が出ないまま終わる話し合いを、誰かのせいではなく「構造」として見つめ、安心・安全な場をどうつくるかを丸一日のワークで体験する特別回。</p>
-                        <p class="row-link"><a href="https://peatix.com/event/5210934" target="_blank" rel="noopener"><i class="mdi mdi-open-in-new"></i>詳細・お申し込み（Peatix）</a></p>
-                        <a class="row-img" href="https://peatix.com/event/5210934" target="_blank" rel="noopener"><img src="images/taiwa_lab_05_20261226.jpg" alt="第5回 対話する学校ラボ「システム思考×対話」告知バナー" loading="lazy"></a>
-                    </div>
-                </div>
-                <div class="act-row rv">
+            <div class="log-tools rv" role="toolbar" aria-label="記録の絞り込み">
+                <button type="button" class="chip is-on" data-f="all" aria-pressed="true">すべて<span class="n"></span></button>
+                <button type="button" class="chip" data-f="school" aria-pressed="false">学校での研修<span class="n"></span></button>
+                <button type="button" class="chip" data-f="talk" aria-pressed="false">登壇・講演<span class="n"></span></button>
+                <button type="button" class="chip" data-f="open" aria-pressed="false">公開イベント<span class="n"></span></button>
+                <button type="button" class="chip" data-f="community" aria-pressed="false">保護者・地域・企業<span class="n"></span></button>
+            </div>
+            <div class="act-log" id="act-log">
+                <div class="act-row rv" data-cat="school">
                     <div class="d">2026.10.16</div>
                     <div>
                         <h4>履正社中学校・高等学校 AI教員研修（第5回）</h4>
@@ -447,7 +508,7 @@
                         <p>「コンセンサス型合意形成」。生成AIガイドラインの策定に向けて、先生方全員で考えるワークショップ。事前に集めた意見からAIが第1案をつくり、島ごとの対話で条文を磨いていった。反対意見や懸念から書きはじめる形で、少数意見を置き去りにしない話し合いを体験していただいた。</p>
                     </div>
                 </div>
-                <div class="act-row rv">
+                <div class="act-row rv" data-cat="open">
                     <div class="d">2026.10.10</div>
                     <div>
                         <h4>第4回 対話する学校ラボ「探究×対話」</h4>
@@ -456,7 +517,7 @@
                         <a class="row-img" href="https://peatix.com/event/5121438" target="_blank" rel="noopener"><img src="images/taiwa_lab_04_20261010.jpg" alt="第4回 対話する学校ラボ「探究×対話」告知バナー" loading="lazy"></a>
                     </div>
                 </div>
-                <div class="act-row rv">
+                <div class="act-row rv" data-cat="school">
                     <div class="d">2026.10.10</div>
                     <div>
                         <h4>はら研・氷上情報教育研究会 合同例会 生成AIワークショップ</h4>
@@ -464,7 +525,7 @@
                         <p>「Gemで『AIの相棒』をつくって使い合おう」。先生方が自分用のAIチューターをつくり、互いに試し合うワークを担当。当日の記録をAIでまとめる「AIナレッジファシリテーター」も務めた。</p>
                     </div>
                 </div>
-                <div class="act-row rv">
+                <div class="act-row rv" data-cat="school">
                     <div class="d">2026.09.30</div>
                     <div>
                         <h4>摂津市立摂津小学校 教員研修（第2回）</h4>
@@ -473,7 +534,7 @@
                         <p class="row-link"><a href="https://note.com/kitada_tomoya/n/nbf1fc06a3c38" target="_blank" rel="noopener"><i class="mdi mdi-open-in-new"></i>実践レポート（note）</a></p>
                     </div>
                 </div>
-                <div class="act-row rv">
+                <div class="act-row rv" data-cat="community">
                     <div class="d">2026.09.10</div>
                     <div>
                         <h4>枚方市立川越小学校 保護者向けAI講座</h4>
@@ -481,7 +542,7 @@
                         <p>「うちの子とAI ―― 学校で使いはじめた今、家庭でできること」。5・6年生の学習端末で Gemini・NotebookLM の活用が始まったことを受け、ライブデモを交えながら「使わせるか否か」ではなく「どう一緒に育てるか」を保護者と共有した。</p>
                     </div>
                 </div>
-<div class="act-row rv">
+                <div class="act-row rv" data-cat="school">
                     <div class="d">2026.09.01</div>
                     <div>
                         <h4>履正社中学校・高等学校 AI教員研修（第4回）</h4>
@@ -489,7 +550,7 @@
                         <p>「なぜ今、情報活用能力なのか」。次期学習指導要領の議論と世界の動向を押さえたうえで、認知的オフロードやフィルターバブルを実際のデモで体感し、合意形成のミニ実践までを60分で。</p>
                     </div>
                 </div>
-                <div class="act-row rv">
+                <div class="act-row rv" data-cat="school">
                     <div class="d">2026.08.25</div>
                     <div>
                         <h4>京都文教小学校 Canva研修</h4>
@@ -497,7 +558,7 @@
                         <p>Canvaの共同編集を「授業の中でどう使うか」に絞った実践型の研修。先生方に実際に手を動かしていただきながら進めた。2回目を10月に予定。</p>
                     </div>
                 </div>
-                <div class="act-row rv">
+                <div class="act-row rv" data-cat="school">
                     <div class="d">2026.08.24</div>
                     <div>
                         <h4>京都市立花園小学校 AI教員研修（第1回）</h4>
@@ -505,7 +566,7 @@
                         <p>「AI基礎 × Canva共同編集」。Microsoft 365 Copilot で授業案を壁打ちし、社会科「室町文化」をチームで分担してCanvaの共同編集でまとめるワークを体験。あえて画面を閉じる時間をつくり、AIに任せすぎたときに何が起きるか（認知的オフロード）も体感していただいた。</p>
                     </div>
                 </div>
-                <div class="act-row rv">
+                <div class="act-row rv" data-cat="community">
                     <div class="d">2026.08.24</div>
                     <div>
                         <h4>京都市 学校地域協働推進員向け AI研修</h4>
@@ -513,7 +574,7 @@
                         <p>「会議の録音が、そのまま記録になる」。参加者が触るのは録音ボタンだけという設計で、NotebookLM が録音から活動報告の下書きをつくるところまでを実演した。</p>
                     </div>
                 </div>
-                <div class="act-row rv">
+                <div class="act-row rv" data-cat="school">
                     <div class="d">2026.08.19</div>
                     <div>
                         <h4>京都市立高雄小学校 AI教員研修（第2回）</h4>
@@ -521,7 +582,7 @@
                         <p>「AIを使った授業研究・授業準備」。2学期直前に、他校の実践紹介と Microsoft 365 Copilot での教材研究を実践形式で。</p>
                     </div>
                 </div>
-                <div class="act-row rv">
+                <div class="act-row rv" data-cat="community">
                     <div class="d">2026.08.19</div>
                     <div>
                         <h4>連合兵庫 連帯教育委員会 合意形成ワークショップ</h4>
@@ -529,7 +590,7 @@
                         <p>コンセンサス型合意形成AIチューターを用い、匿名で集めた意見をその場で構造化しながら議論する体験ワークを担当。</p>
                     </div>
                 </div>
-                <div class="act-row rv">
+                <div class="act-row rv" data-cat="open">
                     <div class="d">2026.08.08</div>
                     <div>
                         <h4>マイクラ×防災 探究ワークショップ</h4>
@@ -537,7 +598,7 @@
                         <p>Minecraftで身近な防災課題を見つけ、対策を制作・発表する探究型ワークショップを2部制で実施。京都市教育委員会の後援を受けて開催しました。</p>
                     </div>
                 </div>
-                <div class="act-row rv">
+                <div class="act-row rv" data-cat="school">
                     <div class="d">2026.08.05</div>
                     <div>
                         <h4>公立小学校 教職員向け 対話研修（1日）</h4>
@@ -545,7 +606,7 @@
                         <p>「氷山モデル」で出来事の水面下にある感情とニーズに目を向ける一日。関係の質から職員室を耕す学校研修。</p>
                     </div>
                 </div>
-                <div class="act-row rv">
+                <div class="act-row rv" data-cat="open">
                     <div class="d">2026.08.04</div>
                     <div>
                         <h4>第3回 対話する学校ラボ（京都・対面）</h4>
@@ -553,7 +614,7 @@
                         <p>「本質的な対話トレーニング — 対立を乗り越え、共感を生む"あり方"とは」。10:30〜16:30の終日プログラム。</p>
                     </div>
                 </div>
-                <div class="act-row rv">
+                <div class="act-row rv" data-cat="school">
                     <div class="d">2026.07.03</div>
                     <div>
                         <h4>履正社中学校・高等学校 AI教員研修（第3回）</h4>
@@ -561,7 +622,7 @@
                         <p>「NotebookLMでチームの知を束ねる」。校務分掌のチームごとに資料を持ち寄り、AIで共有知をつくる60分。</p>
                     </div>
                 </div>
-                <div class="act-row rv">
+                <div class="act-row rv" data-cat="talk">
                     <div class="d">2026.06.20</div>
                     <div>
                         <h4>右京区少年補導委員会常磐野支部 委員研修会 登壇</h4>
@@ -569,7 +630,7 @@
                         <p>「子どもを取り巻くネット環境とその影響 〜AIを正しく使うために〜」。警察・中学校長の講演に続き、家庭と地域の視点からAIとの付き合い方を届けた。</p>
                     </div>
                 </div>
-                <div class="act-row rv">
+                <div class="act-row rv" data-cat="talk">
                     <div class="d">2026.05.31</div>
                     <div>
                         <h4>ALLOUND デジタルファシリテーション講座 Day2</h4>
@@ -577,7 +638,7 @@
                         <p>参加者の声をリアルタイムで構造化し、場に返す進行を担当。</p>
                     </div>
                 </div>
-                <div class="act-row rv">
+                <div class="act-row rv" data-cat="community">
                     <div class="d">2026.05〜10</div>
                     <div>
                         <h4>【エルクリ】ママ起業家のためのAI伴走講座（全12回）</h4>
@@ -585,7 +646,7 @@
                         <p>6か月・全12回の連続伴走プログラム。AIに慣れるところから、仕事で使える成果物づくり、そして復職後の働き方をAIと一緒にデザインするところまでを段階的に。</p>
                     </div>
                 </div>
-                <div class="act-row rv">
+                <div class="act-row rv" data-cat="talk">
                     <div class="d">2026.05.01</div>
                     <div>
                         <h4>京都橘中学校・高等学校「学びの会」登壇</h4>
@@ -593,7 +654,7 @@
                         <p>AI×教育の最先端動向を、エビデンスを引きながら教員向けに届けた講演。</p>
                     </div>
                 </div>
-                <div class="act-row rv">
+                <div class="act-row rv" data-cat="community">
                     <div class="d">2026.04.23</div>
                     <div>
                         <h4>Lcreate 女性起業家AI講座 講師</h4>
@@ -601,7 +662,7 @@
                         <p>「AIを"使う人"から"使いこなす人"へ」。業務でのAI活用を実践する90分講座。</p>
                     </div>
                 </div>
-                <div class="act-row rv">
+                <div class="act-row rv" data-cat="talk">
                     <div class="d">2026.04.18</div>
                     <div>
                         <h4>AI共創型反転授業シンポジウム 登壇</h4>
@@ -609,7 +670,7 @@
                         <p>AIで授業と学校がどう変わるかを、リアルタイムデモを交えて体験する公開シンポジウム。</p>
                     </div>
                 </div>
-                <div class="act-row rv">
+                <div class="act-row rv" data-cat="school">
                     <div class="d">2026.03.27</div>
                     <div>
                         <h4>枚方市立川越小学校 AI教員研修</h4>
@@ -617,7 +678,7 @@
                         <p>「Gemini × NotebookLM で4月の授業を変える」。一人一台端末・生成AI活用に向けた授業設計研修。</p>
                     </div>
                 </div>
-                <div class="act-row rv">
+                <div class="act-row rv" data-cat="school">
                     <div class="d">2026.03</div>
                     <div>
                         <h4>かえつ有明 AI教員研修（全3回）</h4>
@@ -625,7 +686,7 @@
                         <p>反転授業・AIチューター・ジャストインタイム学習をテーマにした教員向け連続研修。</p>
                     </div>
                 </div>
-                <div class="act-row rv">
+                <div class="act-row rv" data-cat="talk">
                     <div class="d">2026.02.21</div>
                     <div>
                         <h4>N-E.X.T. ハイスクール構想シンポジウム</h4>
@@ -633,6 +694,9 @@
                         <p>N-E.X.T.ハイスクール構想を、現場を背負う校長の視点から問い直す公開シンポジウム。前週にはプレ対話ライブも開催し、期待と迷いの両方を含めた対話の場をつくった。</p>
                     </div>
                 </div>
+            </div>
+            <div class="log-more" hidden>
+                <button type="button" class="log-more-btn" aria-controls="act-log" aria-expanded="false"><span class="t">すべての記録を見る</span><span class="c"></span><i class="mdi mdi-chevron-down"></i></button>
             </div>
 
             <div class="act-cta rv">
