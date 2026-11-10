@@ -132,6 +132,12 @@ document.addEventListener('DOMContentLoaded', function () {
         floating.style.opacity = '0';
         toggleFloating();
         window.addEventListener('scroll', toggleFloating, { passive: true });
+        const contactEl = document.querySelector('#contact, section.cta');
+        if (contactEl && 'IntersectionObserver' in window) {
+            new IntersectionObserver((es) => {
+                floating.classList.toggle('off', es[0].isIntersecting);
+            }, { rootMargin: '0px 0px -10% 0px' }).observe(contactEl);
+        }
     }
 
     // ---------- Reel（画面内で自動再生・音声トグル） ----------
