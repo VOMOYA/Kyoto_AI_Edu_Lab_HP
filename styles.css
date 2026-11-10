@@ -351,7 +351,10 @@ footer small{font-family:var(--serif-en);letter-spacing:.04em;font-size:.78rem}
 .reel-head h2{font-family:var(--gothic);font-weight:700;font-size:clamp(1.7rem,3.2vw,2.5rem);letter-spacing:.03em;line-height:1.4}
 .reel-head p{color:rgba(255,255,255,.72);font-size:.96rem;line-height:1.9;max-width:26em;justify-self:end}
 .reel-frame{position:relative;border-radius:14px;overflow:hidden;background:#0d1d29;aspect-ratio:16/9;box-shadow:0 30px 80px -30px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.08)}
-.reel-video{display:block;width:100%;height:100%;object-fit:cover;cursor:pointer}
+/* 動画とその下の操作列が一画面に収まるよう、画面の高さから幅を決める（固定ヘッダーと操作列の分を引く） */
+.reel-frame,.reel-ctrl{width:min(100%,max(300px,calc((100vh - 200px)*16/9)));margin-left:auto;margin-right:auto}
+@supports(height:100svh){.reel-frame,.reel-ctrl{width:min(100%,max(300px,calc((100svh - 200px)*16/9)))}}
+.reel-video{display:block;width:100%;height:100%;object-fit:contain;cursor:pointer}
 .reel-ctrl{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:1.3rem}
 .reel-note{font-family:var(--serif-en);font-weight:600;font-size:.72rem;letter-spacing:.18em;color:rgba(255,255,255,.45)}
 .reel-sound{display:inline-flex;align-items:center;gap:.45rem;padding:.6rem 1.05rem;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.03em;cursor:pointer;transition:background .25s var(--ease),border-color .25s var(--ease),transform .25s var(--ease)}
